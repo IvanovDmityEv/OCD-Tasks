@@ -16,7 +16,7 @@ class PageVC: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
-
+        
         if let startVC = showViewController(0) {
             setViewControllers([startVC], direction: .forward, animated: true)
         }
@@ -36,12 +36,6 @@ class PageVC: UIPageViewController {
         startVC.lastPage = arrayPresentText.endIndex - 1
         return startVC
     }
-    
-    func userDefaults() {
-
-        dismiss(animated: true)
-    }
-    
 }
 
 extension PageVC: UIPageViewControllerDataSource {
