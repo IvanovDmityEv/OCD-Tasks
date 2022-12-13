@@ -27,3 +27,18 @@ class TasksListVC: UIViewController {
     */
 
 }
+
+extension TasksListVC: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellTasksList", for: indexPath) as! CellTasksList
+        
+        return cell
+    }
+}
+
+extension TasksListVC: UITableViewDelegate { }

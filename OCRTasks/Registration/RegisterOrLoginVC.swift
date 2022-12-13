@@ -24,10 +24,7 @@ class RegisterOrLoginVC: UIViewController {
             logIn.layer.cornerRadius = 17
         }
     }
-    
-    @IBOutlet weak var continueWithoutRegistration: UIButton!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,7 +39,7 @@ class RegisterOrLoginVC: UIViewController {
     func startPresentation() {
         
         let userDefaults = UserDefaults.standard
-        let presentationWasViewed = userDefaults.bool(forKey: "presentationWasViewed2")
+        let presentationWasViewed = userDefaults.bool(forKey: "presentationWasViewed5")
         
         if presentationWasViewed == false {
             if let pageVC = storyboard?.instantiateViewController(withIdentifier: "PageVC") as? PageVC {
@@ -58,10 +55,4 @@ class RegisterOrLoginVC: UIViewController {
     @IBAction func logInAction(_ sender: UIButton) {
         print("logInAction")
     }
-    
-    @IBAction func continueWithoutRegistrationAction(_ sender: UIButton) {
-    }
-    
-    
-   
 }

@@ -26,7 +26,7 @@ class PageVC: UIPageViewController {
         guard index >= 0 else { return nil }
         guard index < arrayPresentText.count else {
             let userDefaults = UserDefaults.standard
-            userDefaults.set(true, forKey: "presentationWasViewed2")
+            userDefaults.set(true, forKey: "presentationWasViewed5")
             return nil}
         guard let startVC = storyboard?.instantiateViewController(withIdentifier: "StartVC") as? StartVC else { return nil}
         startVC.imagePrezent = arrayPresentNameImage[index]
