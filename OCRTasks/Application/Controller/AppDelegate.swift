@@ -9,7 +9,6 @@ import UIKit
 import CoreData
 import FirebaseCore
 
-//@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

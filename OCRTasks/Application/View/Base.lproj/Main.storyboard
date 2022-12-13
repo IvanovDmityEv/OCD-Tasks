@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Register Or LoginVC-->
+        <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RegisterOrLoginVC" customModule="OCRTasks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="OCRTasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,8 +39,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="n3X-rf-kVJ">
                                         <rect key="frame" x="0.0" y="102" width="298.33333333333331" height="230"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regisration/Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ys-cD-kBH">
-                                                <rect key="frame" x="29.666666666666671" y="0.0" width="238.66666666666663" height="32.666666666666664"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User authorization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ys-cD-kBH">
+                                                <rect key="frame" x="23.666666666666671" y="0.0" width="250.66666666666663" height="32.666666666666664"/>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
                                                 <color key="textColor" systemColor="systemGreenColor"/>
                                                 <nil key="highlightedColor"/>
@@ -76,25 +76,24 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="139" height="34.333333333333336"/>
                                                         <color key="backgroundColor" systemColor="labelColor"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title=" Check in" imagePadding="0.0">
+                                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title=" Register" imagePadding="0.0">
                                                             <imageReference key="image" image="person.crop.circle.fill.badge.plus" catalog="system" renderingMode="original" variableValue="0.80000000000000004"/>
                                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <action selector="checkInAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="it3-Y9-EQy"/>
+                                                            <action selector="registerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Az5-Sg-xgE"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHJ-Ys-M6J">
                                                         <rect key="frame" x="159" y="0.0" width="139.33333333333337" height="34.333333333333336"/>
                                                         <color key="backgroundColor" systemColor="labelColor"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title=" Log in" imagePadding="0.0">
+                                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title=" Login" imagePadding="0.0">
                                                             <imageReference key="image" image="person.crop.circle.fill" catalog="system" renderingMode="template" variableValue="0.80000000000000004"/>
                                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <action selector="logInAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7AJ-JT-ybb"/>
-                                                            <segue destination="yvj-va-ve9" kind="show" id="ENf-Pa-SIn"/>
+                                                            <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qpx-hG-xYQ"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -132,12 +131,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Z7B-0M-k5t"/>
                     <connections>
-                        <outlet property="checkIn" destination="WQ1-dS-6FD" id="srU-XH-aPA"/>
                         <outlet property="emailTextFild" destination="mQ2-dd-BK5" id="76u-ry-Xqk"/>
-                        <outlet property="logIn" destination="MHJ-Ys-M6J" id="iEr-XG-YHg"/>
+                        <outlet property="login" destination="MHJ-Ys-M6J" id="iEr-XG-YHg"/>
                         <outlet property="message" destination="4PV-or-4AG" id="7Vw-Nf-kvJ"/>
                         <outlet property="passwordTextFild" destination="cd1-ET-8mR" id="5qa-9p-ltT"/>
-                        <outlet property="registerOrLogin" destination="9ys-cD-kBH" id="Yil-gF-QLM"/>
+                        <outlet property="register" destination="WQ1-dS-6FD" id="srU-XH-aPA"/>
+                        <outlet property="userAuthorization" destination="9ys-cD-kBH" id="Yil-gF-QLM"/>
+                        <segue destination="yvj-va-ve9" kind="show" identifier="TasksList" id="O0a-1g-JRx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

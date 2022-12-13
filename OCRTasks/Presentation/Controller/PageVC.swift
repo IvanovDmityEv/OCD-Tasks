@@ -12,6 +12,7 @@ class PageVC: UIPageViewController {
     let arrayPresentText = ["Do you have OCD?",
                             "Do you double-check your tasks?",
                             "This app will make your life a little easier"]
+    private let identifireStartVC = "StartVC"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +27,9 @@ class PageVC: UIPageViewController {
         guard index >= 0 else { return nil }
         guard index < arrayPresentText.count else {
             let userDefaults = UserDefaults.standard
-            userDefaults.set(true, forKey: "presentationWasViewed5")
+            userDefaults.set(true, forKey: Key.keyPresentation.rawValue)
             return nil}
-        guard let startVC = storyboard?.instantiateViewController(withIdentifier: "StartVC") as? StartVC else { return nil}
+        guard let startVC = storyboard?.instantiateViewController(withIdentifier: identifireStartVC) as? StartVC else { return nil}
         startVC.imagePrezent = arrayPresentNameImage[index]
         startVC.textPrezent = arrayPresentText[index]
         startVC.currentPage = index
