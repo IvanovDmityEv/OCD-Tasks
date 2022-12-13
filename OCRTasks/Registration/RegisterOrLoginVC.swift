@@ -27,13 +27,28 @@ class RegisterOrLoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // наблюдатель для клавиатуры
+        NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         startPresentation()
+    }
+    
+    @objc func kbDidShow(notification: Notification) {
+        guard let userInfo = notification.userInfo else { return }
+        let keybordSize = (userInfo[RegisterOrLoginVC.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height + keybordSize.height)
+        (self.view as! UIScrollView).scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keybordSize.height, right: 0)
+    }
+    
+    @objc func kbDidHide() {
+        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height)
     }
     
     func startPresentation() {
