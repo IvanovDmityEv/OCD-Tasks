@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ErrorMessages: String {
+enum Messages: String {
     case infoIsIncorrect = "Info is incorrect"
     case errorOccurred = "Error occurred"
     case noSuchUser = "No such user"

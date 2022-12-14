@@ -27,7 +27,7 @@ class LoginVC: UIViewController {
     }
 
     private let segueIdentifier = "TasksList"
-    let identifirePageVC = "PageVC"
+    private let identifirePageVC = "PageVC"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,7 @@ class LoginVC: UIViewController {
         
         message.alpha = 0
         
+        // проверка на наличие входа пользователя
         Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
             if user != nil {
                 self?.performSegue(withIdentifier: (self?.segueIdentifier)!, sender: nil)
@@ -85,42 +86,25 @@ class LoginVC: UIViewController {
         }
     }
     
-    @IBAction func registerAction(_ sender: UIButton) {
-        guard let email = emailTextFild.text,
-                let password = passwordTextFild.text,
-                email != "",
-                password != "" else {
-            warning(widthText: ErrorMessages.infoIsIncorrect.rawValue)
-            return
-        }
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            guard error == nil, user != nil  else  { return }
-//            if error == nil {
-//                if user != nil {
-//
-//                }
-//            }
-        }
-    }
     
     @IBAction func loginAction(_ sender: UIButton) {
         guard let email = emailTextFild.text,
                 let password = passwordTextFild.text,
                 email != "",
                 password != "" else {
-            warning(widthText: ErrorMessages.infoIsIncorrect.rawValue)
+            warning(widthText: Messages.infoIsIncorrect.rawValue)
             return
         }
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
             if error != nil {
-                self?.warning(widthText: ErrorMessages.errorOccurred.rawValue)
+                self?.warning(widthText: Messages.errorOccurred.rawValue)
                 return
             }
             if user != nil {
                 self?.performSegue(withIdentifier: (self?.segueIdentifier)!, sender: nil)
                 return
             }
-            self?.warning(widthText: ErrorMessages.noSuchUser.rawValue)
+            self?.warning(widthText: Messages.noSuchUser.rawValue)
         }
     }
 }
