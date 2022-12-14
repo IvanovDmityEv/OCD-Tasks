@@ -39,7 +39,7 @@ class RegistrationVC: UIViewController {
     
     @objc func kbDidShow(notification: Notification) {
         guard let userInfo = notification.userInfo else { return }
-        let keybordSize = (userInfo[LoginVC.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keybordSize = (userInfo[RegistrationVC.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
         (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height + keybordSize.height)
         (self.view as! UIScrollView).scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keybordSize.height, right: 0)
