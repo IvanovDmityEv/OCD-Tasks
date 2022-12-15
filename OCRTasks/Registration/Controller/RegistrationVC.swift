@@ -29,25 +29,55 @@ class RegistrationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // наблюдатели для клавиатуры
-        NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         
         message.alpha = 0
+//        NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     
-    @objc func kbDidShow(notification: Notification) {
-        guard let userInfo = notification.userInfo else { return }
-        let keybordSize = (userInfo[RegistrationVC.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        
-        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height + keybordSize.height)
-        (self.view as! UIScrollView).scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keybordSize.height, right: 0)
+    @objc func keyboardWasShown(_ notification: NSNotification) {
+      if let kbRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+          let edgeInsets: UIEdgeInsets = .init(top: 0,
+                                               left: 0,
+                                               bottom: kbRect.height - view.safeAreaInsets.bottom,
+                                               right: 0)
+          (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: kbRect.height - view.safeAreaInsets.bottom)
+          (self.view as! UIScrollView).scrollIndicatorInsets = edgeInsets
+      }
+    }
+    @objc func keyboardWillHide() {
+        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: view.safeAreaInsets.bottom)
     }
     
-    @objc func kbDidHide() {
-        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height)
-    }
+    
+    
+    
+//    @objc func kbDidShow(notification: Notification) {
+//        guard let userInfo = notification.userInfo else { return }
+//        let keybordSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+//        print(keybordSize.height)
+//        print(keybordSize.width)
+//
+//        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height + keybordSize.height)
+//        print(self.view.bounds.size.width)
+//        print(self.view.bounds.size.height)
+//        print(self.view.bounds.size.height + keybordSize.height)
+//        print((self.view as! UIScrollView).contentSize)
+//
+//
+//        (self.view as! UIScrollView).scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keybordSize.height, right: 0)
+//    }
+//
+//    @objc func kbDidHide(notification: Notification) {
+//        (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height)
+//        print((self.view as! UIScrollView).contentSize)
+//
+//    }
     
     func warning(widthText text: String) {
         message.text = text
@@ -67,16 +97,14 @@ class RegistrationVC: UIViewController {
             return
         }
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            guard error == nil, user != nil  else  { return }
-            
             //надо подумать + добавить сообщение и задержку
-            self.performSegue(withIdentifier: "UserRegisteredSegue", sender: nil)
-            
-//            if error == nil {
-//                if user != nil {
-//
-//                }
-//            }
+            if error == nil {
+                if user != nil {
+                    self.performSegue(withIdentifier: "UserRegisteredSegue", sender: nil)
+                }
+            } else {
+                self.warning(widthText: Messages.errorOccurred.rawValue)
+            }
         }
     }
 }

@@ -32,12 +32,14 @@ class UserInfoVC: UIViewController {
 //                 подумать как это переделать
                 do {
                     try Auth.auth().signOut()
-                    if let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
-                        present(loginVC, animated: true)
-                    }
+                    
+//                    if let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
+//                        present(loginVC, animated: true)
+//                    }
                 } catch {
                     print(error.localizedDescription)
                 }
+        dismiss(animated: true)
     }
     
 }
