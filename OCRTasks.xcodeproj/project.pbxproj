@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0DBEA2294B4DA00095A101 /* SegueLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBEA1294B4DA00095A101 /* SegueLoginVC.swift */; };
+		2C0DBEA4294B805F0095A101 /* SegueTasksListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBEA3294B805F0095A101 /* SegueTasksListVC.swift */; };
 		2C3B4A1D29488DEC003D78CE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3B4A1C29488DEC003D78CE /* FirebaseAnalytics */; };
 		2C3B4A1F29488DEC003D78CE /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3B4A1E29488DEC003D78CE /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		2C3B4A2129488DEC003D78CE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3B4A2029488DEC003D78CE /* FirebaseAuth */; };
@@ -15,7 +17,6 @@
 		2C4B307B2948B62200D092BF /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B307A2948B62200D092BF /* Messages.swift */; };
 		2C4B307D2948B8E800D092BF /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B307C2948B8E800D092BF /* Key.swift */; };
 		2C5E79D62949B232001D44CB /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E79D52949B232001D44CB /* RegistrationVC.swift */; };
-		2C5E79D92949C0BC001D44CB /* WorningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E79D82949C0BC001D44CB /* WorningManager.swift */; };
 		2C5E79DE2949D605001D44CB /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E79DD2949D605001D44CB /* UserInfoVC.swift */; };
 		2C6562AC293B8C7100814D9E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6562AB293B8C7100814D9E /* LoginVC.swift */; };
 		2C6562AE293B988A00814D9E /* TasksListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6562AD293B988A00814D9E /* TasksListVC.swift */; };
@@ -33,11 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C0DBEA1294B4DA00095A101 /* SegueLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueLoginVC.swift; sourceTree = "<group>"; };
+		2C0DBEA3294B805F0095A101 /* SegueTasksListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueTasksListVC.swift; sourceTree = "<group>"; };
 		2C3B4A242948A288003D78CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C4B307A2948B62200D092BF /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		2C4B307C2948B8E800D092BF /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		2C5E79D52949B232001D44CB /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
-		2C5E79D82949C0BC001D44CB /* WorningManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorningManager.swift; sourceTree = "<group>"; };
 		2C5E79DD2949D605001D44CB /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		2C6562AB293B8C7100814D9E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		2C6562AD293B988A00814D9E /* TasksListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListVC.swift; sourceTree = "<group>"; };
@@ -106,14 +108,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		2C3B4A0F2947145B003D78CE /* TaskList */ = {
+		2C3B4A0F2947145B003D78CE /* TasksList */ = {
 			isa = PBXGroup;
 			children = (
 				2C3B4A122947148A003D78CE /* Model */,
 				2C3B4A1129471480003D78CE /* View */,
 				2C3B4A102947146E003D78CE /* Controller */,
 			);
-			path = TaskList;
+			path = TasksList;
 			sourceTree = "<group>";
 		};
 		2C3B4A102947146E003D78CE /* Controller */ = {
@@ -135,6 +137,7 @@
 		2C3B4A122947148A003D78CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2C0DBEA3294B805F0095A101 /* SegueTasksListVC.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 		2C4B30802948B9EC00D092BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2C0DBEA1294B4DA00095A101 /* SegueLoginVC.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,8 +290,7 @@
 				2C3B4A1829471A6F003D78CE /* Login */,
 				2C5E79D42949B1E6001D44CB /* Registration */,
 				2C4B307A2948B62200D092BF /* Messages.swift */,
-				2C5E79D82949C0BC001D44CB /* WorningManager.swift */,
-				2C3B4A0F2947145B003D78CE /* TaskList */,
+				2C3B4A0F2947145B003D78CE /* TasksList */,
 				2C5E79DA2949D5AB001D44CB /* UserInfo */,
 				2C3B4A13294715A5003D78CE /* AddTask */,
 				2CA41DC3293B700A0001AC27 /* Assets.xcassets */,
@@ -379,14 +382,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C5E79D92949C0BC001D44CB /* WorningManager.swift in Sources */,
 				2CFAA2B82940A31100E87A6B /* CellTask.swift in Sources */,
 				2C4B307D2948B8E800D092BF /* Key.swift in Sources */,
 				2C4B307B2948B62200D092BF /* Messages.swift in Sources */,
 				2C6562AC293B8C7100814D9E /* LoginVC.swift in Sources */,
 				2CA41DB8293B70090001AC27 /* AppDelegate.swift in Sources */,
 				2C6562AE293B988A00814D9E /* TasksListVC.swift in Sources */,
+				2C0DBEA4294B805F0095A101 /* SegueTasksListVC.swift in Sources */,
 				2CFAA2BA2940E30900E87A6B /* CellTasksList.swift in Sources */,
+				2C0DBEA2294B4DA00095A101 /* SegueLoginVC.swift in Sources */,
 				2CFAA2B62940803500E87A6B /* AddTasksVC.swift in Sources */,
 				2CA41DBA293B70090001AC27 /* SceneDelegate.swift in Sources */,
 				2CA41DC2293B70090001AC27 /* OCRTasks.xcdatamodeld in Sources */,

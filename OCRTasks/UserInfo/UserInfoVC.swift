@@ -21,6 +21,8 @@ class UserInfoVC: UIViewController {
         }
     }
     
+    let unwindSegue = "UnwindSegue"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,16 +32,13 @@ class UserInfoVC: UIViewController {
     
     @IBAction func signOutAction(_ sender: UIButton) {
 //                 подумать как это переделать
-                do {
-                    try Auth.auth().signOut()
-                    
-//                    if let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
-//                        present(loginVC, animated: true)
-//                    }
-                } catch {
-                    print(error.localizedDescription)
-                }
+        do {
+            try Auth.auth().signOut()
+            
+        } catch {
+            print(error.localizedDescription)
+        }
         dismiss(animated: true)
+        performSegue(withIdentifier: unwindSegue, sender: nil)
     }
-    
 }
