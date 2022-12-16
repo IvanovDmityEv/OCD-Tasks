@@ -350,7 +350,7 @@
         <!--Tasks List-->
         <scene sceneID="aqL-u3-APy">
             <objects>
-                <viewController id="yvj-va-ve9" customClass="TasksListVC" customModule="OCRTasks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TasksListVC" id="yvj-va-ve9" customClass="TasksListVC" customModule="OCRTasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v9s-kG-qnN">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

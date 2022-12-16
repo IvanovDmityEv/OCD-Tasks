@@ -25,18 +25,20 @@ class LoginVC: UIViewController {
     }
     
     private let identifirePageVC = "PageVC"
+    var handle: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         message.alpha = 0
         
+        
         // проверка на наличие входа пользователя
-        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
-            if user != nil {
-                self?.performSegue(withIdentifier: SegueLoginVC.tasksList.rawValue, sender: nil)
-            }
-        }
+//        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+//            if user != nil {
+//                self?.performSegue(withIdentifier: SegueLoginVC.tasksList.rawValue, sender: nil)
+//            }
+//        }
         
         // наблюдатели для клавиатуры
         NotificationCenter.default.addObserver(self,
@@ -52,15 +54,31 @@ class LoginVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        emailTextFild.text = ""
-        passwordTextFild.text = ""
+        // проверка на наличие входа пользователя
+
+        handle = Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+             if user != nil {
+                 self?.performSegue(withIdentifier: SegueLoginVC.tasksList.rawValue, sender: nil)
+             }
+         }
+//        emailTextFild.text = ""
+//        passwordTextFild.text = ""
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        Auth.auth().removeStateDidChangeListener(handle!)
+        
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         startPresentation()
     }
+    
 
     @objc func kbDidShow(notification: Notification) {
         guard let userInfo = notification.userInfo else { return }
@@ -113,7 +131,7 @@ class LoginVC: UIViewController {
                 return
             }
             if user != nil {
-                self?.performSegue(withIdentifier: SegueLoginVC.tasksList.rawValue, sender: nil)
+//                self?.performSegue(withIdentifier: SegueLoginVC.tasksList.rawValue, sender: nil)
                 return
             }
             self?.warning(widthText: Messages.noSuchUser.rawValue)

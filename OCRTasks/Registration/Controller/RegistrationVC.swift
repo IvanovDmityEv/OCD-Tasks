@@ -77,7 +77,7 @@ class RegistrationVC: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] (user, error) in
             if error == nil {
                 if user != nil {
-                    
+                    self?.performSegue(withIdentifier: (self?.userRegisteredSegue)!, sender: nil)
                 } else {
                     self?.warning(widthText: Messages.errorOccurred.rawValue)
                 }
