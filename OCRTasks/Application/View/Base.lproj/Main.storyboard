@@ -483,40 +483,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="38" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hvz-sy-iJi">
-                                <rect key="frame" x="0.0" y="226.33333333333331" width="430" height="705.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellTask" id="Jqg-50-79E" customClass="CellTask" customModule="OCRTasks" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="430" height="38"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jqg-50-79E" id="URI-bW-ltd">
-                                            <rect key="frame" x="0.0" y="0.0" width="430" height="38"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNW-5F-dtT">
-                                                    <rect key="frame" x="15" y="2" width="400" height="34"/>
-                                                    <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="hNW-5F-dtT" firstAttribute="top" secondItem="URI-bW-ltd" secondAttribute="top" constant="2" id="IX5-21-tdz"/>
-                                                <constraint firstAttribute="bottom" secondItem="hNW-5F-dtT" secondAttribute="bottom" constant="2" id="Jha-hV-VTT"/>
-                                                <constraint firstItem="hNW-5F-dtT" firstAttribute="leading" secondItem="URI-bW-ltd" secondAttribute="leading" constant="15" id="REU-T6-hKd"/>
-                                                <constraint firstAttribute="trailing" secondItem="hNW-5F-dtT" secondAttribute="trailing" constant="15" id="XxO-pK-ppa"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="newTaskTextField" destination="hNW-5F-dtT" id="J6d-Pl-aTS"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="NxO-5D-VZl" id="EbQ-Z5-yFu"/>
-                                    <outlet property="delegate" destination="NxO-5D-VZl" id="N2T-zL-IFE"/>
-                                </connections>
-                            </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name tasks list" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7D-zZ-1Cw">
                                 <rect key="frame" x="15" y="103" width="400" height="34"/>
                                 <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="20"/>
@@ -552,8 +518,42 @@
                                     </datePicker>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGq-CJ-eWA">
-                                <rect key="frame" x="15" y="187" width="400" height="34.333333333333343"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="38" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hvz-sy-iJi">
+                                <rect key="frame" x="0.0" y="239.33333333333331" width="430" height="692.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellTask" id="Jqg-50-79E" customClass="CellTask" customModule="OCRTasks" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="430" height="38"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jqg-50-79E" id="URI-bW-ltd">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="38"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNW-5F-dtT">
+                                                    <rect key="frame" x="15" y="2" width="400" height="34"/>
+                                                    <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hNW-5F-dtT" firstAttribute="top" secondItem="URI-bW-ltd" secondAttribute="top" constant="2" id="IX5-21-tdz"/>
+                                                <constraint firstAttribute="bottom" secondItem="hNW-5F-dtT" secondAttribute="bottom" constant="2" id="Jha-hV-VTT"/>
+                                                <constraint firstItem="hNW-5F-dtT" firstAttribute="leading" secondItem="URI-bW-ltd" secondAttribute="leading" constant="15" id="REU-T6-hKd"/>
+                                                <constraint firstAttribute="trailing" secondItem="hNW-5F-dtT" secondAttribute="trailing" constant="15" id="XxO-pK-ppa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="newTaskTextField" destination="hNW-5F-dtT" id="J6d-Pl-aTS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NxO-5D-VZl" id="EbQ-Z5-yFu"/>
+                                    <outlet property="delegate" destination="NxO-5D-VZl" id="N2T-zL-IFE"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vff-eK-pPR">
+                                <rect key="frame" x="15" y="195" width="400" height="34.333333333333343"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <color key="tintColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
@@ -561,7 +561,7 @@
                                     <imageReference key="image" image="plus.circle" catalog="system" renderingMode="original" variableValue="0.40000000000000008"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="actionAddNewTask:" destination="NxO-5D-VZl" eventType="touchUpInside" id="fRv-9L-Wvn"/>
+                                    <action selector="actionAddNewTask:" destination="NxO-5D-VZl" eventType="touchUpInside" id="5tB-tJ-Uyp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -570,17 +570,17 @@
                         <constraints>
                             <constraint firstItem="WXB-DP-dhp" firstAttribute="top" secondItem="m7D-zZ-1Cw" secondAttribute="bottom" id="4fH-JT-8YQ"/>
                             <constraint firstItem="m7D-zZ-1Cw" firstAttribute="leading" secondItem="din-Wx-7DC" secondAttribute="leading" constant="15" id="6br-MK-5e8"/>
-                            <constraint firstItem="fGq-CJ-eWA" firstAttribute="leading" secondItem="din-Wx-7DC" secondAttribute="leading" constant="15" id="CKt-YA-Wup"/>
+                            <constraint firstItem="vff-eK-pPR" firstAttribute="trailing" secondItem="hqk-xD-SoS" secondAttribute="trailing" id="DTG-I8-8rR"/>
                             <constraint firstItem="WXB-DP-dhp" firstAttribute="leading" secondItem="din-Wx-7DC" secondAttribute="leading" constant="15" id="Hel-1P-H8K"/>
-                            <constraint firstItem="din-Wx-7DC" firstAttribute="trailing" secondItem="fGq-CJ-eWA" secondAttribute="trailing" constant="15" id="PLv-Xq-6pi"/>
+                            <constraint firstItem="vff-eK-pPR" firstAttribute="leading" secondItem="WXB-DP-dhp" secondAttribute="leading" id="OAb-6P-9Tc"/>
+                            <constraint firstItem="vff-eK-pPR" firstAttribute="top" secondItem="WXB-DP-dhp" secondAttribute="bottom" constant="8" id="RSI-7t-qC1"/>
+                            <constraint firstItem="hvz-sy-iJi" firstAttribute="top" secondItem="vff-eK-pPR" secondAttribute="bottom" constant="10" id="SHn-4f-E8n"/>
                             <constraint firstItem="m7D-zZ-1Cw" firstAttribute="top" secondItem="din-Wx-7DC" secondAttribute="top" id="bsy-fm-Zlr"/>
                             <constraint firstItem="hqk-xD-SoS" firstAttribute="top" secondItem="m7D-zZ-1Cw" secondAttribute="bottom" id="cg3-xY-hYy"/>
                             <constraint firstItem="din-Wx-7DC" firstAttribute="trailing" secondItem="m7D-zZ-1Cw" secondAttribute="trailing" constant="15" id="g4R-pl-ScH"/>
-                            <constraint firstItem="hvz-sy-iJi" firstAttribute="top" secondItem="fGq-CJ-eWA" secondAttribute="bottom" constant="5" id="gcN-Z6-1RI"/>
                             <constraint firstItem="hvz-sy-iJi" firstAttribute="trailing" secondItem="din-Wx-7DC" secondAttribute="trailing" id="h4k-8n-h7H"/>
                             <constraint firstItem="din-Wx-7DC" firstAttribute="trailing" secondItem="hqk-xD-SoS" secondAttribute="trailing" constant="15" id="oXa-7s-UnS"/>
                             <constraint firstAttribute="bottom" secondItem="hvz-sy-iJi" secondAttribute="bottom" id="pzn-KU-HEJ"/>
-                            <constraint firstItem="fGq-CJ-eWA" firstAttribute="top" secondItem="WXB-DP-dhp" secondAttribute="bottom" id="t5b-0r-DHk"/>
                             <constraint firstItem="hqk-xD-SoS" firstAttribute="leading" relation="lessThanOrEqual" secondItem="WXB-DP-dhp" secondAttribute="trailing" constant="119" id="von-5U-TQ6"/>
                             <constraint firstItem="hvz-sy-iJi" firstAttribute="leading" secondItem="din-Wx-7DC" secondAttribute="leading" id="wQw-S5-R1u"/>
                         </constraints>
@@ -593,7 +593,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttonAddNewTask" destination="fGq-CJ-eWA" id="4LY-9A-Rmx"/>
                         <outlet property="datePicker" destination="qRg-G0-puy" id="95L-PA-Tcc"/>
                         <outlet property="nameTasksList" destination="m7D-zZ-1Cw" id="OLw-W0-eKY"/>
                         <outlet property="switchDate" destination="4NG-Kr-4PC" id="z2M-Zw-ymP"/>
@@ -604,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDZ-4n-Q7c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2385" y="726"/>
+            <point key="canvasLocation" x="2384.6511627906975" y="725.53648068669531"/>
         </scene>
         <!--PageVC-->
         <scene sceneID="bna-1t-yV7">
