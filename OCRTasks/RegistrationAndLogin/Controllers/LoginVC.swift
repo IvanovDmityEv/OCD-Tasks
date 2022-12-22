@@ -32,14 +32,6 @@ class LoginVC: UIViewController {
         
         message.alpha = 0
         
-        
-        // проверка на наличие входа пользователя
-//        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
-//            if user != nil {
-//                self?.performSegue(withIdentifier: SegueLoginVC.tasksList.rawValue, sender: nil)
-//            }
-//        }
-        
         // наблюдатели для клавиатуры
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(kbDidShow),
@@ -61,8 +53,9 @@ class LoginVC: UIViewController {
                  self?.performSegue(withIdentifier: SegueLoginVC.tasksList.rawValue, sender: nil)
              }
          }
-//        emailTextFild.text = ""
-//        passwordTextFild.text = ""
+        
+        emailTextFild.text = ""
+        passwordTextFild.text = ""
     }
     
     override func viewWillDisappear(_ animated: Bool) {

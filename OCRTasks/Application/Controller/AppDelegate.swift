@@ -8,43 +8,18 @@
 import UIKit
 import CoreData
 import FirebaseCore
-import Firebase
+//import Firebase
 
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-//    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        // проверка на наличие входа пользователя
-//        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
-//            if user == nil {
-//                self?.showAuth()
-//            }
-//        }
-//        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
-//            if user != nil {
-//                self?.showTasksListVC()
-//            }
-//        }
         return true
     }
-    
-//    func showTasksListVC() {
-//        let stoyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let tasksListVC = stoyboard.instantiateViewController(withIdentifier: "TasksListVC") as! TasksListVC
-//        self.window?.rootViewController?.present(tasksListVC, animated: true)
-//    }
-    
-//    func showAuth() {
-//        let stoyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let loginVC = stoyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-//        self.window?.rootViewController?.present(loginVC, animated: true)
-//    }
-    
 
     // MARK: UISceneSession Lifecycle
 

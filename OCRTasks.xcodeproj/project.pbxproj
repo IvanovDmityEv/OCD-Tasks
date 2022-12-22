@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2C0DBEA2294B4DA00095A101 /* SegueLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBEA1294B4DA00095A101 /* SegueLoginVC.swift */; };
 		2C0DBEA4294B805F0095A101 /* SegueTasksListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBEA3294B805F0095A101 /* SegueTasksListVC.swift */; };
+		2C0DBEA6295058590095A101 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBEA5295058590095A101 /* User.swift */; };
+		2C0DBEA829505A360095A101 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBEA729505A360095A101 /* Tasks.swift */; };
 		2C3B4A1D29488DEC003D78CE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3B4A1C29488DEC003D78CE /* FirebaseAnalytics */; };
 		2C3B4A1F29488DEC003D78CE /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3B4A1E29488DEC003D78CE /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		2C3B4A2129488DEC003D78CE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3B4A2029488DEC003D78CE /* FirebaseAuth */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		2C0DBEA1294B4DA00095A101 /* SegueLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueLoginVC.swift; sourceTree = "<group>"; };
 		2C0DBEA3294B805F0095A101 /* SegueTasksListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueTasksListVC.swift; sourceTree = "<group>"; };
+		2C0DBEA5295058590095A101 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2C0DBEA729505A360095A101 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		2C3B4A242948A288003D78CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C4B307A2948B62200D092BF /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		2C4B307C2948B8E800D092BF /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 		2C3B4A16294715D1003D78CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2C0DBEA729505A360095A101 /* Tasks.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,22 +190,23 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		2C3B4A1829471A6F003D78CE /* Login */ = {
+		2C3B4A1829471A6F003D78CE /* RegistrationAndLogin */ = {
 			isa = PBXGroup;
 			children = (
-				2C4B30802948B9EC00D092BF /* Model */,
+				2C4B30802948B9EC00D092BF /* Models */,
 				2C4B307F2948B9DE00D092BF /* View */,
-				2C4B307E2948B9D000D092BF /* Controller */,
+				2C4B307E2948B9D000D092BF /* Controllers */,
 			);
-			path = Login;
+			path = RegistrationAndLogin;
 			sourceTree = "<group>";
 		};
-		2C4B307E2948B9D000D092BF /* Controller */ = {
+		2C4B307E2948B9D000D092BF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				2C6562AB293B8C7100814D9E /* LoginVC.swift */,
+				2C5E79D52949B232001D44CB /* RegistrationVC.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		2C4B307F2948B9DE00D092BF /* View */ = {
@@ -210,12 +216,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		2C4B30802948B9EC00D092BF /* Model */ = {
+		2C4B30802948B9EC00D092BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				2C0DBEA1294B4DA00095A101 /* SegueLoginVC.swift */,
+				2C4B307A2948B62200D092BF /* Messages.swift */,
+				2C0DBEA5295058590095A101 /* User.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		2C4B30812948BABA00D092BF /* Controller */ = {
@@ -240,22 +248,6 @@
 				2C4B307C2948B8E800D092BF /* Key.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		2C5E79D42949B1E6001D44CB /* Registration */ = {
-			isa = PBXGroup;
-			children = (
-				2C5E79D72949B250001D44CB /* Controller */,
-			);
-			path = Registration;
-			sourceTree = "<group>";
-		};
-		2C5E79D72949B250001D44CB /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				2C5E79D52949B232001D44CB /* RegistrationVC.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		2C5E79DA2949D5AB001D44CB /* UserInfo */ = {
@@ -287,12 +279,10 @@
 			children = (
 				2C3B4A0B294711F0003D78CE /* Application */,
 				2C3B4A1729471A45003D78CE /* Presentation */,
-				2C3B4A1829471A6F003D78CE /* Login */,
-				2C5E79D42949B1E6001D44CB /* Registration */,
-				2C4B307A2948B62200D092BF /* Messages.swift */,
+				2C3B4A1829471A6F003D78CE /* RegistrationAndLogin */,
 				2C3B4A0F2947145B003D78CE /* TasksList */,
-				2C5E79DA2949D5AB001D44CB /* UserInfo */,
 				2C3B4A13294715A5003D78CE /* AddTask */,
+				2C5E79DA2949D5AB001D44CB /* UserInfo */,
 				2CA41DC3293B700A0001AC27 /* Assets.xcassets */,
 				2CA41DC8293B700A0001AC27 /* Info.plist */,
 				2CA41DC0293B70090001AC27 /* OCRTasks.xcdatamodeld */,
@@ -386,9 +376,11 @@
 				2C4B307D2948B8E800D092BF /* Key.swift in Sources */,
 				2C4B307B2948B62200D092BF /* Messages.swift in Sources */,
 				2C6562AC293B8C7100814D9E /* LoginVC.swift in Sources */,
+				2C0DBEA829505A360095A101 /* Tasks.swift in Sources */,
 				2CA41DB8293B70090001AC27 /* AppDelegate.swift in Sources */,
 				2C6562AE293B988A00814D9E /* TasksListVC.swift in Sources */,
 				2C0DBEA4294B805F0095A101 /* SegueTasksListVC.swift in Sources */,
+				2C0DBEA6295058590095A101 /* User.swift in Sources */,
 				2CFAA2BA2940E30900E87A6B /* CellTasksList.swift in Sources */,
 				2C0DBEA2294B4DA00095A101 /* SegueLoginVC.swift in Sources */,
 				2CFAA2B62940803500E87A6B /* AddTasksVC.swift in Sources */,

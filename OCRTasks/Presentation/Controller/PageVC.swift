@@ -8,7 +8,7 @@
 import UIKit
 
 class PageVC: UIPageViewController {
-    let arrayPresentNameImage = ["image1", "image2", "image3"]
+    let arrayPresentNameImage = ["image-prezentation-1", "image-prezentation-2", "image-prezentation-3"]
     let arrayPresentText = ["Do you have OCD?",
                             "Do you double-check your tasks?",
                             "This app will make your life a little easier"]

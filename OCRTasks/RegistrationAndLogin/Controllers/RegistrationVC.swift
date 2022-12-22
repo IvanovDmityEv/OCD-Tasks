@@ -81,6 +81,8 @@ class RegistrationVC: UIViewController {
                 } else {
                     self?.warning(widthText: Messages.errorOccurred.rawValue)
                 }
+            } else {
+                self?.warning(widthText: Messages.infoIsIncorrect.rawValue)
             }
         }
     }

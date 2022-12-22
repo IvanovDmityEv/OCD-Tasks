@@ -28,7 +28,7 @@ private let identifierCell = "CellTasksList"
     
 }
 
-extension TasksListVC: UITableViewDataSource {
+extension TasksListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
@@ -39,5 +39,3 @@ extension TasksListVC: UITableViewDataSource {
         return cell
     }
 }
-
-extension TasksListVC: UITableViewDelegate { }

@@ -13,17 +13,25 @@ class CellTask: UITableViewCell {
     @IBOutlet weak var newTaskTextField: UITextField!
     
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        newTaskTextField.delegate = self
     }
 
+}
+extension CellTask: UITextFieldDelegate {
+
+    //скрытие клавиатуры по нажатию Done
+    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        newTaskTextField.resignFirstResponder()
+        
+        return true
+    }
 }
