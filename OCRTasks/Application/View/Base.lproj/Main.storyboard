@@ -245,7 +245,7 @@
                             <constraint firstItem="Os2-xR-VyI" firstAttribute="top" secondItem="VxM-rG-F20" secondAttribute="top" id="xUe-Zc-hvn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6v7-gL-oxO"/>
+                    <navigationItem key="navigationItem" style="editor" id="6v7-gL-oxO"/>
                     <connections>
                         <outlet property="message" destination="BMA-05-psf" id="tAd-Yt-aOn"/>
                         <outlet property="newUserEmail" destination="46w-9p-EKX" id="0pG-Tb-eUD"/>
@@ -333,7 +333,7 @@
                             <constraint firstItem="0e4-Oi-eDC" firstAttribute="centerX" secondItem="sYC-zM-rwx" secondAttribute="centerX" id="pz8-QW-9wd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mnm-tN-tyD"/>
+                    <navigationItem key="navigationItem" style="editor" id="mnm-tN-tyD"/>
                     <connections>
                         <outlet property="signOutButton" destination="YRi-9J-F0e" id="8Jr-4z-7tS"/>
                         <outlet property="userEmail" destination="YVU-FD-zHc" id="e37-Ea-jtp"/>
@@ -478,48 +478,18 @@
         <!--Add Tasks-->
         <scene sceneID="91D-GA-2Ng">
             <objects>
-                <viewController id="NxO-5D-VZl" customClass="AddTasksVC" customModule="OCRTasks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddTasksVC" id="NxO-5D-VZl" customClass="AddTasksVC" customModule="OCRTasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7TW-cy-aLg">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name tasks list" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7D-zZ-1Cw">
-                                <rect key="frame" x="15" y="103" width="400" height="34"/>
+                                <rect key="frame" x="15" y="113" width="400" height="34"/>
                                 <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WXB-DP-dhp">
-                                <rect key="frame" x="15" y="137" width="138" height="50"/>
-                                <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4NG-Kr-4PC">
-                                        <rect key="frame" x="0.0" y="9.6666666666666572" width="51" height="31"/>
-                                    </switch>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="qRg-G0-puy">
-                                        <rect key="frame" x="54" y="0.0" width="84" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="84" id="c5U-ox-gC0"/>
-                                            <constraint firstAttribute="height" constant="50" id="wI7-a0-cnf"/>
-                                        </constraints>
-                                    </datePicker>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hqk-xD-SoS">
-                                <rect key="frame" x="272" y="137" width="143" height="50"/>
-                                <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sBd-Qb-yTn">
-                                        <rect key="frame" x="0.0" y="9.6666666666666572" width="51" height="31"/>
-                                    </switch>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nBp-ap-hbv">
-                                        <rect key="frame" x="54" y="0.0" width="89" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="89" id="kQr-xp-w9F"/>
-                                            <constraint firstAttribute="height" constant="50" id="pef-IR-GZT"/>
-                                        </constraints>
-                                    </datePicker>
-                                </subviews>
-                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="38" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hvz-sy-iJi">
-                                <rect key="frame" x="0.0" y="239.33333333333331" width="430" height="692.66666666666674"/>
+                                <rect key="frame" x="0.0" y="201.33333333333331" width="430" height="730.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellTask" id="Jqg-50-79E" customClass="CellTask" customModule="OCRTasks" customModuleProvider="target">
@@ -552,40 +522,69 @@
                                     <outlet property="delegate" destination="NxO-5D-VZl" id="N2T-zL-IFE"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vff-eK-pPR">
-                                <rect key="frame" x="15" y="195" width="400" height="34.333333333333343"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBm-lE-Ubb">
+                                <rect key="frame" x="15" y="157" width="400" height="34.333333333333343"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vff-eK-pPR">
+                                        <rect key="frame" x="0.0" y="0.0" width="133.33333333333334" height="34.333333333333336"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <color key="tintColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" Date">
+                                            <imageReference key="image" image="calendar" catalog="system" renderingMode="original" variableValue="0.40000000000000008"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="actionAddDate:" destination="NxO-5D-VZl" eventType="touchUpInside" id="kcJ-mf-13S"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g68-uQ-gw7">
+                                        <rect key="frame" x="133.33333333333331" y="0.0" width="133.33333333333331" height="34.333333333333336"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <color key="tintColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" Time">
+                                            <imageReference key="image" image="clock" catalog="system" renderingMode="original" variableValue="0.40000000000000008"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="actionAddTime:" destination="NxO-5D-VZl" eventType="touchUpInside" id="pKf-5a-B9V"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jn1-sJ-dLW">
+                                        <rect key="frame" x="266.66666666666669" y="0.0" width="133.33333333333331" height="34.333333333333336"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <color key="tintColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" Task">
+                                            <imageReference key="image" image="plus.circle" catalog="system" renderingMode="original" variableValue="0.40000000000000008"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="actionAddNewTask:" destination="NxO-5D-VZl" eventType="touchUpInside" id="C1A-Ua-tEe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <color key="tintColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=" New task">
-                                    <imageReference key="image" image="plus.circle" catalog="system" renderingMode="original" variableValue="0.40000000000000008"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="actionAddNewTask:" destination="NxO-5D-VZl" eventType="touchUpInside" id="5tB-tJ-Uyp"/>
-                                </connections>
-                            </button>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="7z4-JQ-p5O"/>
+                                    <constraint firstAttribute="height" constant="34.329999999999998" id="WVz-eH-QLx"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="din-Wx-7DC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WXB-DP-dhp" firstAttribute="top" secondItem="m7D-zZ-1Cw" secondAttribute="bottom" id="4fH-JT-8YQ"/>
+                            <constraint firstItem="jBm-lE-Ubb" firstAttribute="top" secondItem="m7D-zZ-1Cw" secondAttribute="bottom" constant="10" id="3QI-sI-sId"/>
                             <constraint firstItem="m7D-zZ-1Cw" firstAttribute="leading" secondItem="din-Wx-7DC" secondAttribute="leading" constant="15" id="6br-MK-5e8"/>
-                            <constraint firstItem="vff-eK-pPR" firstAttribute="trailing" secondItem="hqk-xD-SoS" secondAttribute="trailing" id="DTG-I8-8rR"/>
-                            <constraint firstItem="WXB-DP-dhp" firstAttribute="leading" secondItem="din-Wx-7DC" secondAttribute="leading" constant="15" id="Hel-1P-H8K"/>
-                            <constraint firstItem="vff-eK-pPR" firstAttribute="leading" secondItem="WXB-DP-dhp" secondAttribute="leading" id="OAb-6P-9Tc"/>
-                            <constraint firstItem="vff-eK-pPR" firstAttribute="top" secondItem="WXB-DP-dhp" secondAttribute="bottom" constant="8" id="RSI-7t-qC1"/>
-                            <constraint firstItem="hvz-sy-iJi" firstAttribute="top" secondItem="vff-eK-pPR" secondAttribute="bottom" constant="10" id="SHn-4f-E8n"/>
-                            <constraint firstItem="m7D-zZ-1Cw" firstAttribute="top" secondItem="din-Wx-7DC" secondAttribute="top" id="bsy-fm-Zlr"/>
-                            <constraint firstItem="hqk-xD-SoS" firstAttribute="top" secondItem="m7D-zZ-1Cw" secondAttribute="bottom" id="cg3-xY-hYy"/>
+                            <constraint firstItem="hvz-sy-iJi" firstAttribute="top" secondItem="jBm-lE-Ubb" secondAttribute="bottom" constant="10" id="6pF-tW-1Zv"/>
+                            <constraint firstItem="din-Wx-7DC" firstAttribute="trailing" secondItem="jBm-lE-Ubb" secondAttribute="trailing" constant="15" id="Yho-aE-CDD"/>
+                            <constraint firstItem="m7D-zZ-1Cw" firstAttribute="top" secondItem="din-Wx-7DC" secondAttribute="top" constant="10" id="bsy-fm-Zlr"/>
+                            <constraint firstItem="jBm-lE-Ubb" firstAttribute="leading" secondItem="din-Wx-7DC" secondAttribute="leading" constant="15" id="dDN-BS-l1Z"/>
                             <constraint firstItem="din-Wx-7DC" firstAttribute="trailing" secondItem="m7D-zZ-1Cw" secondAttribute="trailing" constant="15" id="g4R-pl-ScH"/>
                             <constraint firstItem="hvz-sy-iJi" firstAttribute="trailing" secondItem="din-Wx-7DC" secondAttribute="trailing" id="h4k-8n-h7H"/>
-                            <constraint firstItem="din-Wx-7DC" firstAttribute="trailing" secondItem="hqk-xD-SoS" secondAttribute="trailing" constant="15" id="oXa-7s-UnS"/>
                             <constraint firstAttribute="bottom" secondItem="hvz-sy-iJi" secondAttribute="bottom" id="pzn-KU-HEJ"/>
-                            <constraint firstItem="hqk-xD-SoS" firstAttribute="leading" relation="lessThanOrEqual" secondItem="WXB-DP-dhp" secondAttribute="trailing" constant="119" id="von-5U-TQ6"/>
                             <constraint firstItem="hvz-sy-iJi" firstAttribute="leading" secondItem="din-Wx-7DC" secondAttribute="leading" id="wQw-S5-R1u"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Tasks" id="71C-gW-vMX">
+                    <navigationItem key="navigationItem" title="Add Tasks" style="editor" id="71C-gW-vMX">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="xA4-77-LbY">
                             <connections>
                                 <action selector="saveTasks:" destination="NxO-5D-VZl" id="Wx4-Ad-F2N"/>
@@ -593,17 +592,38 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="datePicker" destination="qRg-G0-puy" id="95L-PA-Tcc"/>
+                        <outlet property="buttoAddDate" destination="vff-eK-pPR" id="OpE-Gd-Rwc"/>
+                        <outlet property="buttonAddNewTask" destination="jn1-sJ-dLW" id="22M-IB-teG"/>
+                        <outlet property="buttonAddTime" destination="g68-uQ-gw7" id="CK2-62-Wld"/>
                         <outlet property="nameTasksList" destination="m7D-zZ-1Cw" id="OLw-W0-eKY"/>
-                        <outlet property="switchDate" destination="4NG-Kr-4PC" id="z2M-Zw-ymP"/>
-                        <outlet property="switchTime" destination="sBd-Qb-yTn" id="KmL-Ye-SK9"/>
+                        <outlet property="stackViewButton" destination="jBm-lE-Ubb" id="Aov-Vq-vnm"/>
                         <outlet property="tableView" destination="hvz-sy-iJi" id="iaA-CZ-YUt"/>
-                        <outlet property="timePicker" destination="nBp-ap-hbv" id="av5-Hi-4ZU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDZ-4n-Q7c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2384.6511627906975" y="725.53648068669531"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JdD-cw-OXp">
+            <objects>
+                <viewController id="J7k-Xi-3GN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HO2-oA-xTD">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="u0v-g4-WEu">
+                                <rect key="frame" x="12" y="92" width="401" height="269"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hlh-nn-urE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6WS-7Z-gd6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3094.8837209302324" y="643.77682403433482"/>
         </scene>
         <!--PageVC-->
         <scene sceneID="bna-1t-yV7">
@@ -710,10 +730,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="e8v-Qq-lci"/>
+        <segue reference="bAu-QX-6hi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.right" catalog="system" width="128" height="95"/>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="clock" catalog="system" width="128" height="123"/>
         <image name="image-autorization" width="1380" height="1380"/>
         <image name="image-registration" width="1800" height="1800"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
