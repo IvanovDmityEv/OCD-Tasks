@@ -475,7 +475,7 @@
             </objects>
             <point key="canvasLocation" x="1575" y="362"/>
         </scene>
-        <!--Add Tasks-->
+        <!--New Tasks-->
         <scene sceneID="91D-GA-2Ng">
             <objects>
                 <viewController storyboardIdentifier="AddTasksVC" id="NxO-5D-VZl" customClass="AddTasksVC" customModule="OCRTasks" customModuleProvider="target" sceneMemberID="viewController">
@@ -485,7 +485,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name tasks list" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7D-zZ-1Cw">
                                 <rect key="frame" x="15" y="113" width="400" height="34"/>
-                                <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="38" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hvz-sy-iJi">
@@ -501,7 +501,7 @@
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNW-5F-dtT">
                                                     <rect key="frame" x="15" y="2" width="400" height="34"/>
-                                                    <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
@@ -528,34 +528,46 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vff-eK-pPR">
                                         <rect key="frame" x="0.0" y="0.0" width="133.33333333333334" height="34.333333333333336"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="sRa-ti-nZg"/>
+                                        </constraints>
                                         <color key="tintColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title=" Date">
                                             <imageReference key="image" image="calendar" catalog="system" renderingMode="original" variableValue="0.40000000000000008"/>
+                                            <fontDescription key="titleFontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="actionAddDate:" destination="NxO-5D-VZl" eventType="touchUpInside" id="kcJ-mf-13S"/>
+                                            <action selector="actionAddDate:" destination="NxO-5D-VZl" eventType="touchUpInside" id="5Te-G1-j5o"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g68-uQ-gw7">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g68-uQ-gw7">
                                         <rect key="frame" x="133.33333333333331" y="0.0" width="133.33333333333331" height="34.333333333333336"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="DMl-oT-5n4"/>
+                                        </constraints>
                                         <color key="tintColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title=" Time">
                                             <imageReference key="image" image="clock" catalog="system" renderingMode="original" variableValue="0.40000000000000008"/>
+                                            <fontDescription key="titleFontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="actionAddTime:" destination="NxO-5D-VZl" eventType="touchUpInside" id="pKf-5a-B9V"/>
+                                            <action selector="actionAddTime:" destination="NxO-5D-VZl" eventType="touchUpInside" id="nwR-pF-euG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jn1-sJ-dLW">
                                         <rect key="frame" x="266.66666666666669" y="0.0" width="133.33333333333331" height="34.333333333333336"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="8Qs-aU-Snk"/>
+                                        </constraints>
                                         <color key="tintColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title=" Task">
                                             <imageReference key="image" image="plus.circle" catalog="system" renderingMode="original" variableValue="0.40000000000000008"/>
+                                            <fontDescription key="titleFontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="actionAddNewTask:" destination="NxO-5D-VZl" eventType="touchUpInside" id="C1A-Ua-tEe"/>
@@ -565,9 +577,22 @@
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="7z4-JQ-p5O"/>
+                                    <constraint firstItem="jn1-sJ-dLW" firstAttribute="top" secondItem="jBm-lE-Ubb" secondAttribute="top" id="9ko-Iv-dMS"/>
+                                    <constraint firstAttribute="trailing" secondItem="jn1-sJ-dLW" secondAttribute="trailing" id="DOS-6c-fxu"/>
+                                    <constraint firstItem="vff-eK-pPR" firstAttribute="leading" secondItem="jBm-lE-Ubb" secondAttribute="leading" id="RpJ-Ic-r7X"/>
                                     <constraint firstAttribute="height" constant="34.329999999999998" id="WVz-eH-QLx"/>
+                                    <constraint firstItem="g68-uQ-gw7" firstAttribute="centerX" secondItem="jBm-lE-Ubb" secondAttribute="centerX" id="Xp7-e8-wU5"/>
+                                    <constraint firstAttribute="bottom" secondItem="vff-eK-pPR" secondAttribute="bottom" id="hOb-bW-eb0"/>
+                                    <constraint firstItem="vff-eK-pPR" firstAttribute="top" secondItem="jBm-lE-Ubb" secondAttribute="top" id="rNx-FA-9V3"/>
+                                    <constraint firstAttribute="bottom" secondItem="jn1-sJ-dLW" secondAttribute="bottom" id="voF-zA-Xhq"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMg-H0-5uM">
+                                <rect key="frame" x="15" y="108" width="400" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="din-Wx-7DC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -575,16 +600,19 @@
                             <constraint firstItem="jBm-lE-Ubb" firstAttribute="top" secondItem="m7D-zZ-1Cw" secondAttribute="bottom" constant="10" id="3QI-sI-sId"/>
                             <constraint firstItem="m7D-zZ-1Cw" firstAttribute="leading" secondItem="din-Wx-7DC" secondAttribute="leading" constant="15" id="6br-MK-5e8"/>
                             <constraint firstItem="hvz-sy-iJi" firstAttribute="top" secondItem="jBm-lE-Ubb" secondAttribute="bottom" constant="10" id="6pF-tW-1Zv"/>
+                            <constraint firstItem="din-Wx-7DC" firstAttribute="trailing" secondItem="AMg-H0-5uM" secondAttribute="trailing" constant="15" id="Nzb-jN-zxO"/>
+                            <constraint firstItem="m7D-zZ-1Cw" firstAttribute="top" secondItem="AMg-H0-5uM" secondAttribute="bottom" constant="5" id="PRn-bz-Ars"/>
+                            <constraint firstItem="AMg-H0-5uM" firstAttribute="top" secondItem="din-Wx-7DC" secondAttribute="top" constant="5" id="WFa-zx-FAO"/>
                             <constraint firstItem="din-Wx-7DC" firstAttribute="trailing" secondItem="jBm-lE-Ubb" secondAttribute="trailing" constant="15" id="Yho-aE-CDD"/>
-                            <constraint firstItem="m7D-zZ-1Cw" firstAttribute="top" secondItem="din-Wx-7DC" secondAttribute="top" constant="10" id="bsy-fm-Zlr"/>
                             <constraint firstItem="jBm-lE-Ubb" firstAttribute="leading" secondItem="din-Wx-7DC" secondAttribute="leading" constant="15" id="dDN-BS-l1Z"/>
                             <constraint firstItem="din-Wx-7DC" firstAttribute="trailing" secondItem="m7D-zZ-1Cw" secondAttribute="trailing" constant="15" id="g4R-pl-ScH"/>
                             <constraint firstItem="hvz-sy-iJi" firstAttribute="trailing" secondItem="din-Wx-7DC" secondAttribute="trailing" id="h4k-8n-h7H"/>
                             <constraint firstAttribute="bottom" secondItem="hvz-sy-iJi" secondAttribute="bottom" id="pzn-KU-HEJ"/>
+                            <constraint firstItem="AMg-H0-5uM" firstAttribute="leading" secondItem="din-Wx-7DC" secondAttribute="leading" constant="15" id="qCN-At-m1U"/>
                             <constraint firstItem="hvz-sy-iJi" firstAttribute="leading" secondItem="din-Wx-7DC" secondAttribute="leading" id="wQw-S5-R1u"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Tasks" style="editor" id="71C-gW-vMX">
+                    <navigationItem key="navigationItem" title="New Tasks" style="editor" id="71C-gW-vMX">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="xA4-77-LbY">
                             <connections>
                                 <action selector="saveTasks:" destination="NxO-5D-VZl" id="Wx4-Ad-F2N"/>
@@ -592,9 +620,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttoAddDate" destination="vff-eK-pPR" id="OpE-Gd-Rwc"/>
+                        <outlet property="buttonAddDate" destination="vff-eK-pPR" id="xk0-Jn-Qrt"/>
                         <outlet property="buttonAddNewTask" destination="jn1-sJ-dLW" id="22M-IB-teG"/>
-                        <outlet property="buttonAddTime" destination="g68-uQ-gw7" id="CK2-62-Wld"/>
+                        <outlet property="buttonAddTime" destination="g68-uQ-gw7" id="40d-Gb-9OU"/>
+                        <outlet property="dateTasks" destination="AMg-H0-5uM" id="FPL-3C-Sgk"/>
                         <outlet property="nameTasksList" destination="m7D-zZ-1Cw" id="OLw-W0-eKY"/>
                         <outlet property="stackViewButton" destination="jBm-lE-Ubb" id="Aov-Vq-vnm"/>
                         <outlet property="tableView" destination="hvz-sy-iJi" id="iaA-CZ-YUt"/>

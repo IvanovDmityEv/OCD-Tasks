@@ -11,20 +11,34 @@ import Firebase
 class AddTasksVC: UIViewController {
 
     var arrayTasks: [String] = []
-    var tap: [String] = []
-    var dateTasks: String? {
+    private var tap: [String] = []
+    private var date: Date?
+    var dateString: String? {
         didSet {
-            guard dateTasks != nil else  { return }
-            buttoAddDate.titleLabel?.text = dateTasks
+            guard let dateString = dateString else { return }
+            dateTasks.text! = "\(dateString) \(timeString ?? "")"
         }
     }
-    var timeTasks: String = " Time"
-    private var obsserverCell: Bool = true
+    
+    private var time: Date?
+    var timeString: String? {
+        didSet {
+            guard let timeString = timeString else { return }
+            dateTasks.text! = "\(dateString ?? "") \(timeString)"
+        }
+    }
+//    var dateTasksString: String = ""
+    
+//    private var obsserverCell: Bool = true
 //    var cell: CellTask?
     
     var user = User(uid: "", email: "", displayName: "")
     var ref: DatabaseReference!
     var tasksList = Array<Tasks>()
+    
+    
+    
+    @IBOutlet weak var dateTasks: UILabel!
     
     @IBOutlet weak var nameTasksList: UITextField!
     
@@ -34,25 +48,17 @@ class AddTasksVC: UIViewController {
         }
     }
     
-    
-    @IBOutlet weak var buttoAddDate: UIButton! {
+    @IBOutlet weak var buttonAddDate: UIButton! {
         didSet {
-            buttoAddDate.layer.cornerRadius = 7
-//            buttoAddDate.titleLabel?.text = " Date"
-//            guard dateTasks != nil else { return }
-//            buttoAddDate.titleLabel?.text = dateTasks
+            buttonAddDate.layer.cornerRadius = 7
         }
     }
-    
     
     @IBOutlet weak var buttonAddTime: UIButton! {
         didSet {
             buttonAddTime.layer.cornerRadius = 7
-            buttonAddTime.titleLabel?.text = timeTasks
         }
     }
-    
-    
     
     @IBOutlet weak var buttonAddNewTask: UIButton! {
         didSet {
@@ -85,92 +91,105 @@ class AddTasksVC: UIViewController {
     
     @IBAction func actionAddDate(_ sender: UIButton) {
 
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let dateAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let datePicker = UIDatePicker()
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.datePickerMode = .date
         
-//        let dateFormater = DateFormatter()
-//        if dateTasks != nil {
-//            datePicker.date = dateFormater.date(from: dateTasks)
-//        }
-        
-        alertController.view.addSubview(datePicker)
-        
-
-        
+        dateAlertController.view.addSubview(datePicker)
         
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         
-        alertController.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        dateAlertController.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
 
-        datePicker.centerXAnchor.constraint(equalTo: alertController.view.centerXAnchor).isActive = true
-        datePicker.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 30).isActive = true
-
-        let save = UIAlertAction(title: "Save", style: .cancel) { [weak self] (action) in
+        datePicker.centerXAnchor.constraint(equalTo: dateAlertController.view.centerXAnchor).isActive = true
+        datePicker.topAnchor.constraint(equalTo: dateAlertController.view.topAnchor, constant: 30).isActive = true
+    
+        if date != nil {
+            datePicker.date = date!
+        }
+        
+        let clearDate = UIAlertAction(title: "Clear", style: .default) { [weak self] (action) in
+            self?.date = nil
+            self?.dateString = nil
+            guard let timeString = self?.timeString else {
+                self?.dateTasks.text = ""
+                return
+            }
+            self?.dateTasks.text = timeString
+        }
+        
+        let saveDate = UIAlertAction(title: "Save", style: .default) { [weak self] (action) in
             
             let dateFormater = DateFormatter()
-            dateFormater.dateStyle = .short
-            self?.dateTasks = dateFormater.string(from: datePicker.date)
+            dateFormater.dateStyle = .medium
+            
+            self?.dateString = dateFormater.string(from: datePicker.date)
+            self?.date = datePicker.date
 
-            print((self?.dateTasks)!)
-            
-            
         }
+        dateAlertController.addAction(clearDate)
+        dateAlertController.addAction(saveDate)
         
-        let clear = UIAlertAction(title: "Clear", style: .destructive) { [weak self] (action) in
-            self?.dateTasks = nil
-        }
-        alertController.addAction(clear)
-        alertController.addAction(save)
-        
-        present(alertController, animated: true)
+        present(dateAlertController, animated: true)
         
     }
     
     @IBAction func actionAddTime(_ sender: UIButton) {
         
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let timeAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let datePicker = UIDatePicker()
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.datePickerMode = .time
+        let timePicker = UIDatePicker()
+        timePicker.preferredDatePickerStyle = .wheels
+        timePicker.datePickerMode = .time
         
-        alertController.view.addSubview(datePicker)
+        timeAlertController.view.addSubview(timePicker)
         
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        timePicker.translatesAutoresizingMaskIntoConstraints = false
         
-        alertController.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        timeAlertController.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
 
-        datePicker.centerXAnchor.constraint(equalTo: alertController.view.centerXAnchor).isActive = true
-        datePicker.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 30).isActive = true
-
-        let save = UIAlertAction(title: "Save", style: .cancel) { [weak self] (action) in
+        timePicker.centerXAnchor.constraint(equalTo: timeAlertController.view.centerXAnchor).isActive = true
+        timePicker.topAnchor.constraint(equalTo: timeAlertController.view.topAnchor, constant: 30).isActive = true
+    
+        if time != nil {
+            timePicker.date = time!
+        }
+        
+        let clearTime = UIAlertAction(title: "Clear", style: .default) { [weak self] (action) in
+            self?.time = nil
+            self?.timeString = nil
+            guard let dateString = self?.dateString else {
+                self?.dateTasks.text = ""
+                return
+            }
+            self?.dateTasks.text = dateString
+        }
+        
+        let saveTime = UIAlertAction(title: "Save", style: .default) { [weak self] (action) in
             
             let dateFormater = DateFormatter()
             dateFormater.timeStyle = .short
-            self?.timeTasks = dateFormater.string(from: datePicker.date)
             
-            print((self?.timeTasks)!)
+            self?.timeString = dateFormater.string(from: timePicker.date)
+            self?.time = timePicker.date
+            
+//            let date = self?.date
+//            self?.date = date
+//
+//            let dateString = self?.dateString
+//            self?.dateString = dateString
+//
         }
+        timeAlertController.addAction(clearTime)
+        timeAlertController.addAction(saveTime)
         
-        let clear = UIAlertAction(title: "Clear", style: .destructive) { [weak self] (action) in
-            self?.timeTasks = " Time"
-        }
-        alertController.addAction(clear)
-        alertController.addAction(save)
-        
-        present(alertController, animated: true)
+        present(timeAlertController, animated: true)
         
     }
     
-    
-
-
     @IBAction func actionAddNewTask(_ sender: UIButton) {
-//        countTap += 1
-//        tableView.reloadData()
         let indexPath = IndexPath(row: tap.count, section: 0)
                 tap.append("tap \(tap.count)")
                 tableView.beginUpdates()
@@ -206,7 +225,6 @@ extension AddTasksVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellTask", for: indexPath) as! CellTask
         
         guard let textTask = cell.newTaskTextField, textTask.text != "" else { return }
-                    obsserverCell = false
         arrayTasks.append(textTask.text!)
         tableView.reloadData()
             print(textTask.text!)
@@ -218,10 +236,8 @@ extension AddTasksVC: UITableViewDataSource, UITableViewDelegate {
         
         guard let textTask = cell.newTaskTextField, textTask.text != "" else { return }
             arrayTasks.append(textTask.text!)
-    print("массив: \(arrayTasks)")
             tableView.reloadData()
     }
-    
 }
 
 
@@ -233,4 +249,3 @@ extension AddTasksVC: UITextFieldDelegate {
         return true
     }
 }
-
