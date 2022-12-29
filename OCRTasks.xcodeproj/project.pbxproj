@@ -11,6 +11,8 @@
 		2C0DBEA4294B805F0095A101 /* SegueTasksListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBEA3294B805F0095A101 /* SegueTasksListVC.swift */; };
 		2C0DBEA6295058590095A101 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBEA5295058590095A101 /* User.swift */; };
 		2C0DBEA829505A360095A101 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DBEA729505A360095A101 /* Tasks.swift */; };
+		2C23E8C5295DA78A001DC04F /* SettingTextFild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C23E8C4295DA78A001DC04F /* SettingTextFild.swift */; };
+		2C23E8C7295DAB9F001DC04F /* ImagesTextFild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C23E8C6295DAB9F001DC04F /* ImagesTextFild.swift */; };
 		2C3B4A1D29488DEC003D78CE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3B4A1C29488DEC003D78CE /* FirebaseAnalytics */; };
 		2C3B4A1F29488DEC003D78CE /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3B4A1E29488DEC003D78CE /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		2C3B4A2129488DEC003D78CE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3B4A2029488DEC003D78CE /* FirebaseAuth */; };
@@ -30,6 +32,7 @@
 		2CA41DC2293B70090001AC27 /* OCRTasks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CA41DC0293B70090001AC27 /* OCRTasks.xcdatamodeld */; };
 		2CA41DC4293B700A0001AC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CA41DC3293B700A0001AC27 /* Assets.xcassets */; };
 		2CA41DC7293B700A0001AC27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA41DC5293B700A0001AC27 /* LaunchScreen.storyboard */; };
+		2CCF24E4295AFDCC00AAB28E /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCF24E3295AFDCC00AAB28E /* AlertController.swift */; };
 		2CFAA2B62940803500E87A6B /* AddTasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFAA2B52940803500E87A6B /* AddTasksVC.swift */; };
 		2CFAA2B82940A31100E87A6B /* CellTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFAA2B72940A31100E87A6B /* CellTask.swift */; };
 		2CFAA2BA2940E30900E87A6B /* CellTasksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFAA2B92940E30900E87A6B /* CellTasksList.swift */; };
@@ -40,6 +43,8 @@
 		2C0DBEA3294B805F0095A101 /* SegueTasksListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueTasksListVC.swift; sourceTree = "<group>"; };
 		2C0DBEA5295058590095A101 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2C0DBEA729505A360095A101 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		2C23E8C4295DA78A001DC04F /* SettingTextFild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTextFild.swift; sourceTree = "<group>"; };
+		2C23E8C6295DAB9F001DC04F /* ImagesTextFild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesTextFild.swift; sourceTree = "<group>"; };
 		2C3B4A242948A288003D78CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C4B307A2948B62200D092BF /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		2C4B307C2948B8E800D092BF /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 		2CA41DC3293B700A0001AC27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CA41DC6293B700A0001AC27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CA41DC8293B700A0001AC27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CCF24E3295AFDCC00AAB28E /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		2CFAA2B52940803500E87A6B /* AddTasksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTasksVC.swift; sourceTree = "<group>"; };
 		2CFAA2B72940A31100E87A6B /* CellTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTask.swift; sourceTree = "<group>"; };
 		2CFAA2B92940E30900E87A6B /* CellTasksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTasksList.swift; sourceTree = "<group>"; };
@@ -176,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				2C0DBEA729505A360095A101 /* Tasks.swift */,
+				2CCF24E3295AFDCC00AAB28E /* AlertController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +219,7 @@
 		2C4B307F2948B9DE00D092BF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C23E8C4295DA78A001DC04F /* SettingTextFild.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,6 +230,7 @@
 				2C0DBEA1294B4DA00095A101 /* SegueLoginVC.swift */,
 				2C4B307A2948B62200D092BF /* Messages.swift */,
 				2C0DBEA5295058590095A101 /* User.swift */,
+				2C23E8C6295DAB9F001DC04F /* ImagesTextFild.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -372,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C23E8C7295DAB9F001DC04F /* ImagesTextFild.swift in Sources */,
 				2CFAA2B82940A31100E87A6B /* CellTask.swift in Sources */,
 				2C4B307D2948B8E800D092BF /* Key.swift in Sources */,
 				2C4B307B2948B62200D092BF /* Messages.swift in Sources */,
@@ -380,7 +390,9 @@
 				2CA41DB8293B70090001AC27 /* AppDelegate.swift in Sources */,
 				2C6562AE293B988A00814D9E /* TasksListVC.swift in Sources */,
 				2C0DBEA4294B805F0095A101 /* SegueTasksListVC.swift in Sources */,
+				2C23E8C5295DA78A001DC04F /* SettingTextFild.swift in Sources */,
 				2C0DBEA6295058590095A101 /* User.swift in Sources */,
+				2CCF24E4295AFDCC00AAB28E /* AlertController.swift in Sources */,
 				2CFAA2BA2940E30900E87A6B /* CellTasksList.swift in Sources */,
 				2C0DBEA2294B4DA00095A101 /* SegueLoginVC.swift in Sources */,
 				2CFAA2B62940803500E87A6B /* AddTasksVC.swift in Sources */,

@@ -11,8 +11,17 @@ import Firebase
 class LoginVC: UIViewController {
 
     @IBOutlet weak var message: UILabel!
-    @IBOutlet weak var emailTextFild: UITextField!
-    @IBOutlet weak var passwordTextFild: UITextField!
+    @IBOutlet weak var emailTextFild: UITextField! {
+        didSet {
+            emailTextFild.settingImageTextFild(image: ImageTextFild.envelope.rawValue)
+        }
+    }
+    @IBOutlet weak var passwordTextFild: UITextField!{
+        didSet {
+            passwordTextFild.settingImageTextFild(image: ImageTextFild.lock.rawValue)
+        }
+    }
+    
     @IBOutlet weak var register: UIButton! {
         didSet {
             register.layer.cornerRadius = 17

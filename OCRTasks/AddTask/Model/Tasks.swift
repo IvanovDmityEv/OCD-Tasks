@@ -11,13 +11,13 @@ import Firebase
 struct Tasks {
     let title: String
     let tasks: [String?]
-    let dateTasks: Date?
-    let timeTasks: Date?
+    let dateTasks: String?
+    let timeTasks: String?
     let userId: String
     let ref: DatabaseReference?
     var completed: Bool = false
     
-    init(title: String, tasks: [String], dateTasks: Date?, timeTasks: Date?, userId: String) {
+    init(title: String, tasks: [String?], dateTasks: String?, timeTasks: String?, userId: String) {
         self.title = title
         self.tasks = tasks
         self.dateTasks = dateTasks
@@ -30,8 +30,8 @@ struct Tasks {
         let snapshotValue = snapshot.value as! [String: AnyObject]
         title = snapshotValue["title"] as! String
         tasks = snapshotValue["tasks"] as! [String]
-        dateTasks = snapshotValue["dateTasks"] as! Date?
-        timeTasks = snapshotValue["timeTasks"] as! Date?
+        dateTasks = snapshotValue["dateTasks"] as! String?
+        timeTasks = snapshotValue["timeTasks"] as! String?
         userId = snapshotValue["userId"] as! String
         completed = snapshotValue["completed"] as! Bool
         ref = snapshot.ref

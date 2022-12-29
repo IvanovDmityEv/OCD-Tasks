@@ -16,9 +16,21 @@ class RegistrationVC: UIViewController {
             newUserPhoto.layer.cornerRadius = height/2
         }
     }
-    @IBOutlet weak var newUserName: UITextField!
-    @IBOutlet weak var newUserEmail: UITextField!
-    @IBOutlet weak var newUserPassword: UITextField!
+    @IBOutlet weak var newUserName: UITextField! {
+        didSet {
+            newUserName.settingImageTextFild(image: ImageTextFild.person.rawValue)
+        }
+    }
+    @IBOutlet weak var newUserEmail: UITextField! {
+        didSet {
+            newUserEmail.settingImageTextFild(image: ImageTextFild.envelope.rawValue)
+        }
+    }
+    @IBOutlet weak var newUserPassword: UITextField! {
+        didSet {
+            newUserPassword.settingImageTextFild(image: ImageTextFild.lock.rawValue)
+        }
+    }
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var register: UIButton! {
         didSet {

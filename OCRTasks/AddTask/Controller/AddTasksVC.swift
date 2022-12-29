@@ -10,7 +10,7 @@ import Firebase
 
 class AddTasksVC: UIViewController {
 
-    var arrayTasks: [String] = []
+    var arrayTasks: [String?] = []
     private var tap: [String] = []
     private var date: Date?
     var dateString: String? {
@@ -27,7 +27,6 @@ class AddTasksVC: UIViewController {
             dateTasks.text! = "\(dateString ?? "") \(timeString)"
         }
     }
-//    var dateTasksString: String = ""
     
 //    private var obsserverCell: Bool = true
 //    var cell: CellTask?
@@ -75,13 +74,13 @@ class AddTasksVC: UIViewController {
         
         nameTasksList.delegate = self
         
-//        guard let currentUser = Auth.auth().currentUser else { return }
-//
-//        user.uid = currentUser.uid
-//        user.displayName = currentUser.displayName ?? ""
-//        user.email = currentUser.email!
-//
-//        ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasksList")
+        guard let currentUser = Auth.auth().currentUser else { return }
+
+        user.uid = currentUser.uid
+        user.displayName = currentUser.displayName ?? ""
+        user.email = currentUser.email!
+
+        ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasksList")
         
     }
     
@@ -202,7 +201,10 @@ class AddTasksVC: UIViewController {
         
         guard let nameTaskList = nameTasksList, nameTaskList.text != "" else { return }
         
-//        let tasks = Tasks(title: nameTaskList.text!, tasks: arrayTasks, dateTasks: <#T##Date?#>, timeTasks: <#T##Date?#>, userId: <#T##String#>)
+        let tasksList = Tasks(title: nameTasksList.text!, tasks: arrayTasks, dateTasks: dateString, timeTasks: timeString, userId: self.user.uid)
+//        let taskRef = self.ref.child(tasksList.title.lowercased()).child(tasksList.dateTasks ?? "note date").child(tasksList.timeTasks ?? "note time")
+        let taskRef = self.ref.child(tasksList.title.lowercased())
+        
     }
 }
 
