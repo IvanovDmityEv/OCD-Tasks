@@ -8,10 +8,19 @@
 import UIKit
 
 class StartVC: UIViewController {
+    
+    var imagePrezent: String?
+    var textPrezent: String?
+    var currentPage = 0
+    var numberOfPages = 0
+    var lastPage = 0
 
     @IBOutlet weak var imageStartVC: UIImageView! {
         didSet {
-            imageStartVC.image = UIImage(named: imagePrezent!) //подумать
+            imageStartVC.layer.cornerRadius = 20
+            imageStartVC.layer.borderWidth = 1
+            imageStartVC.layer.borderColor = .init(red: 0.682, green: 0.682, blue: 0.698, alpha: 100)
+            imageStartVC.image = UIImage(named: imagePrezent!) //подумать            
         }
     }
     @IBOutlet weak var textStartVC: UILabel! {
@@ -25,26 +34,19 @@ class StartVC: UIViewController {
             pageControlStartVC.currentPage = currentPage
         }
     }
-    @IBOutlet weak var closeStartVC: UIButton! {
+    @IBOutlet weak var buttonCloseStartVC: UIButton! {
         didSet {
-            let height = closeStartVC.frame.height
-            closeStartVC.layer.cornerRadius = height/2
-            closeStartVC.isHidden = true
+            let height = buttonCloseStartVC.frame.height
+            buttonCloseStartVC.layer.cornerRadius = height/2
+            buttonCloseStartVC.isHidden = true
             
             if currentPage == lastPage {
-                closeStartVC.isHidden = false
+                buttonCloseStartVC.isHidden = false
             }
         }
     }
     
-    var imagePrezent: String?
-    var textPrezent: String?
-    var currentPage = 0
-    var numberOfPages = 0
-    var lastPage = 0
-    
-    
-    @IBAction func buttonCloseStartVC(_ sender: UIButton) {
+    @IBAction func closeStartVC(_ sender: UIButton) {
         dismiss(animated: true)
     }
 }

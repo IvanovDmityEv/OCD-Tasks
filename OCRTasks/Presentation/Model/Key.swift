@@ -9,5 +9,5 @@ import Foundation
 
 
 enum Key: String {
-    case keyPresentation = "presentationWasViewed8"
+    case keyPresentation = "presentationWasViewed36"
 }

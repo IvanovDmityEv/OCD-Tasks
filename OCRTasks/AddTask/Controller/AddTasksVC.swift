@@ -7,35 +7,59 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class AddTasksVC: UIViewController {
-
-    var arrayTasks: [String?] = []
-    private var tap: [String] = []
-    private var date: Date?
+    
+    var dictionaryTasks: [Int: String] = [:]
+    var dictionariCoppleted: [Int:Bool] = [:]
+    var dictionaryPhoto: [Int:[String]] = [:]
+    
+    var yourTasks: [String?] = []
+    
     var dateString: String? {
         didSet {
             guard let dateString = dateString else { return }
-            dateTasks.text! = "\(dateString) \(timeString ?? "")"
+            dateTasks.text! = "\(dateString)\(timeString ?? "")"
         }
     }
     
-    private var time: Date?
     var timeString: String? {
         didSet {
             guard let timeString = timeString else { return }
-            dateTasks.text! = "\(dateString ?? "") \(timeString)"
+            dateTasks.text! = "\(dateString ?? "")\(timeString)"
         }
     }
     
-//    private var obsserverCell: Bool = true
-//    var cell: CellTask?
-    
     var user = User(uid: "", email: "", displayName: "")
     var ref: DatabaseReference!
-    var tasksList = Array<Tasks>()
+    var tasksList = Array<TasksList>()
     
-    
+    var editableTasksList = TasksList(title: "", tasks: [], dateTasks: "", timeTasks: "", completed: [], photosTasks: [], userId: "") {
+        didSet {
+            if editableTasksList.tasks != [] {
+                var i = 0
+                for task in editableTasksList.tasks {
+                    dictionaryTasks[i] = task
+                    i += 1
+                }
+            }
+            if editableTasksList.completed != nil {
+                var i = 0
+                for completed in editableTasksList.completed! {
+                    dictionariCoppleted[i] = completed
+                    i += 1
+                }
+            }
+            if editableTasksList.photosTasks != nil {
+                var i = 0
+                for photo in editableTasksList.photosTasks! {
+                    dictionaryPhoto[i] = photo
+                    i += 1
+                }
+            }
+        }
+    }
     
     @IBOutlet weak var dateTasks: UILabel!
     
@@ -65,189 +89,173 @@ class AddTasksVC: UIViewController {
         }
     }
 
+    @IBOutlet weak var buttonSave: UIBarButtonItem! {
+        didSet {
+            buttonSave.isEnabled = false
+        }
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
-        
         nameTasksList.delegate = self
         
+        observerKeyboard()
+        nameTasksList.addTarget(self, action: #selector(UITextFieldDelegate.textFieldDidChangeSelection(_:)), for: UIControl.Event.editingChanged)
+        
         guard let currentUser = Auth.auth().currentUser else { return }
-
         user.uid = currentUser.uid
-        user.displayName = currentUser.displayName ?? ""
         user.email = currentUser.email!
 
         ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasksList")
         
+        fillView()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
     
+    func fillView() {
+        if editableTasksList.title != "" {
+            nameTasksList.text = editableTasksList.title
+            nameTasksList.isEnabled = false
+            buttonSave.isEnabled = true
+        }
+        if editableTasksList.dateTasks != "" {
+            dateString = editableTasksList.dateTasks
+        }
+        if editableTasksList.timeTasks != "" {
+            timeString = editableTasksList.timeTasks
+        }
+        if editableTasksList.tasks != [] {
+            yourTasks = (editableTasksList.tasks)
+        }
+    }
+
     @IBAction func actionAddDate(_ sender: UIButton) {
-
-        let dateAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        let datePicker = UIDatePicker()
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.datePickerMode = .date
-        
-        dateAlertController.view.addSubview(datePicker)
-        
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
-        
-        dateAlertController.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
-
-        datePicker.centerXAnchor.constraint(equalTo: dateAlertController.view.centerXAnchor).isActive = true
-        datePicker.topAnchor.constraint(equalTo: dateAlertController.view.topAnchor, constant: 30).isActive = true
-    
-        if date != nil {
-            datePicker.date = date!
-        }
-        
-        let clearDate = UIAlertAction(title: "Clear", style: .default) { [weak self] (action) in
-            self?.date = nil
-            self?.dateString = nil
-            guard let timeString = self?.timeString else {
-                self?.dateTasks.text = ""
-                return
-            }
-            self?.dateTasks.text = timeString
-        }
-        
-        let saveDate = UIAlertAction(title: "Save", style: .default) { [weak self] (action) in
-            
-            let dateFormater = DateFormatter()
-            dateFormater.dateStyle = .medium
-            
-            self?.dateString = dateFormater.string(from: datePicker.date)
-            self?.date = datePicker.date
-
-        }
-        dateAlertController.addAction(clearDate)
-        dateAlertController.addAction(saveDate)
-        
-        present(dateAlertController, animated: true)
-        
+        showAlertController(datePickerMode: .date)
     }
     
     @IBAction func actionAddTime(_ sender: UIButton) {
-        
-        let timeAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        let timePicker = UIDatePicker()
-        timePicker.preferredDatePickerStyle = .wheels
-        timePicker.datePickerMode = .time
-        
-        timeAlertController.view.addSubview(timePicker)
-        
-        timePicker.translatesAutoresizingMaskIntoConstraints = false
-        
-        timeAlertController.view.heightAnchor.constraint(equalToConstant: 350).isActive = true
-
-        timePicker.centerXAnchor.constraint(equalTo: timeAlertController.view.centerXAnchor).isActive = true
-        timePicker.topAnchor.constraint(equalTo: timeAlertController.view.topAnchor, constant: 30).isActive = true
-    
-        if time != nil {
-            timePicker.date = time!
-        }
-        
-        let clearTime = UIAlertAction(title: "Clear", style: .default) { [weak self] (action) in
-            self?.time = nil
-            self?.timeString = nil
-            guard let dateString = self?.dateString else {
-                self?.dateTasks.text = ""
-                return
-            }
-            self?.dateTasks.text = dateString
-        }
-        
-        let saveTime = UIAlertAction(title: "Save", style: .default) { [weak self] (action) in
-            
-            let dateFormater = DateFormatter()
-            dateFormater.timeStyle = .short
-            
-            self?.timeString = dateFormater.string(from: timePicker.date)
-            self?.time = timePicker.date
-            
-//            let date = self?.date
-//            self?.date = date
-//
-//            let dateString = self?.dateString
-//            self?.dateString = dateString
-//
-        }
-        timeAlertController.addAction(clearTime)
-        timeAlertController.addAction(saveTime)
-        
-        present(timeAlertController, animated: true)
-        
+        showAlertController(datePickerMode: .time)
     }
     
     @IBAction func actionAddNewTask(_ sender: UIButton) {
-        let indexPath = IndexPath(row: tap.count, section: 0)
-                tap.append("tap \(tap.count)")
-                tableView.beginUpdates()
+        let indexPath = IndexPath(row: yourTasks.count, section: 0)
+        yourTasks.append("")
+        tableView.beginUpdates()
         tableView.insertRows(at: [indexPath], with: .right)
-                tableView.endUpdates()
-
+        tableView.endUpdates()
     }
     
     @IBAction func saveTasks(_ sender: UIBarButtonItem) {
+        saveTasks()
+    }
+    
+    func saveTasks() {
+        self.view.endEditing(true)
+        
+        var arrayTasks: [String?] = []
+        var taskText: String?
+        var arrayCompleted: [Bool] = []
+        var arrayPhotos: [[String]] = []
+        
+        if dictionaryTasks != [:] {
+            for key in 0...dictionaryTasks.keys.max()! {
+                taskText = dictionaryTasks[key]
+                if taskText != nil, taskText != "" {
+                    arrayTasks.append(taskText)
+                }
+            }
+        }
+        
+        if editableTasksList.tasks != [] {
+            
+            if dictionariCoppleted != [:] {
+                for key in 0...dictionariCoppleted.keys.max()! {
+                    let completed = dictionariCoppleted[key]
+                    if dictionaryTasks[key] != nil, dictionaryTasks[key] != "" {
+                        arrayCompleted.append(completed!)
+                    }
+                }
+            }
+            
+            if dictionaryPhoto != [:] {
+                for key in 0...dictionaryPhoto.keys.max()! {
+                    let photo = dictionaryPhoto[key]
+                    if dictionaryTasks[key] != nil, dictionaryTasks[key] != "" {
+                        arrayPhotos.append(photo!)
+                    }
+                }
+            }
+            
+        } else {
+            
+            arrayCompleted = Array(repeating: false, count: arrayTasks.count)
+            arrayPhotos = Array(repeating: [""], count: arrayTasks.count)
+        }
         
         guard let nameTaskList = nameTasksList, nameTaskList.text != "" else { return }
         
-        let tasksList = Tasks(title: nameTasksList.text!, tasks: arrayTasks, dateTasks: dateString, timeTasks: timeString, userId: self.user.uid)
-//        let taskRef = self.ref.child(tasksList.title.lowercased()).child(tasksList.dateTasks ?? "note date").child(tasksList.timeTasks ?? "note time")
+        let tasksList = TasksList(title: nameTaskList.text!, tasks: arrayTasks, dateTasks: dateString, timeTasks: timeString, completed: arrayCompleted, photosTasks: arrayPhotos, userId: self.user.uid)
+        
+        
         let taskRef = self.ref.child(tasksList.title.lowercased())
         
-    }
-}
-
-extension AddTasksVC: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tap.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellTask", for: indexPath) as! CellTask
-        if arrayTasks.count != 0 {
-            cell.newTaskTextField.text = arrayTasks[indexPath.row]
-
+        taskRef.setValue(tasksList.convertDictionary())
+        
+        if editableTasksList.title != "" {
+            deletePhotoTasks(tasksList: tasksList)
+            editableTasksList = tasksList
+            performSegue(withIdentifier: SegueAddTasksVC.editTasksUnwindSegueToTasksVC.rawValue, sender: nil)
+        } else {
+            performSegue(withIdentifier: SegueAddTasksVC.unwindSegueToTasksListVC.rawValue, sender: nil)
         }
-        
-        return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellTask", for: indexPath) as! CellTask
+    func deletePhotoTasks(tasksList: TasksList) {
         
-        guard let textTask = cell.newTaskTextField, textTask.text != "" else { return }
-        arrayTasks.append(textTask.text!)
-        tableView.reloadData()
-            print(textTask.text!)
-                
-    }
-
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellTask", for: indexPath) as! CellTask
-        
-        guard let textTask = cell.newTaskTextField, textTask.text != "" else { return }
-            arrayTasks.append(textTask.text!)
-            tableView.reloadData()
+        let refStorage = Storage.storage().reference()
+        for task in editableTasksList.tasks {
+            if !tasksList.tasks.contains(task) {
+                let photoRef = refStorage.child("photoTasks").child(user.uid).child(editableTasksList.title).child(task!)
+                photoRef.listAll { result, error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                    for file in result!.items {
+                        file.delete { error in
+                            if let error = error {
+                                print(error.localizedDescription)
+                            } else {
+                                print("file deleted")
+                            }
+                        }
+                    }
+                }
+                photoRef.delete { error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    } else {
+                        print("photos deleted")
+                    }
+                }
+            }
+        }
     }
 }
 
-
-extension AddTasksVC: UITextFieldDelegate {
-    
-    //скрытие клавиатуры по нажатию Done
-    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        nameTasksList.resignFirstResponder()
-        return true
+extension AddTasksVC: TextDelegate {
+    func textFromTextFieldCell(textCell text: String, indexCell index: Int) {
+        dictionaryTasks[index] = text
+        if !editableTasksList.tasks.contains(text) {
+            dictionariCoppleted[index] = false
+            dictionaryPhoto[index] = [""]
+        }
     }
 }

@@ -1,0 +1,105 @@
+
+/* Class = "UILabel"; text = "Date task"; ObjectID = "1Qp-4B-gR8"; */
+"1Qp-4B-gR8.text" = "Date task";
+
+/* Class = "UILabel"; text = "100/100"; ObjectID = "2fo-sH-gUV"; */
+"2fo-sH-gUV.text" = "100/100";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3zA-qA-dNa"; */
+"3zA-qA-dNa.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Name task list"; ObjectID = "5qa-h1-kYe"; */
+"5qa-h1-kYe.text" = "Name task list";
+
+/* Class = "UILabel"; text = "LIFE with OCD"; ObjectID = "6lG-Dk-NH0"; */
+"6lG-Dk-NH0.text" = "LIFE with OCD";
+
+/* Class = "UILabel"; text = "100/100"; ObjectID = "6lm-Cj-X5k"; */
+"6lm-Cj-X5k.text" = "100/100";
+
+/* Class = "UILabel"; text = "Date, Time"; ObjectID = "B0i-KG-6dW"; */
+"B0i-KG-6dW.text" = "Date, Time";
+
+/* Class = "UIButton"; configuration.title = "Sign up"; ObjectID = "CC9-V5-MQu"; */
+"CC9-V5-MQu.configuration.title" = "Sign up";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "CnI-j4-sbu"; */
+"CnI-j4-sbu.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Log in"; ObjectID = "FWK-P0-Wav"; */
+"FWK-P0-Wav.configuration.title" = "Log in";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "FXU-mr-gE4"; */
+"FXU-mr-gE4.title" = "Save";
+
+/* Class = "UILabel"; text = "User Name"; ObjectID = "Vmq-oY-LcT"; */
+"Vmq-oY-LcT.text" = "User Name";
+
+/* Class = "UIBarButtonItem"; title = "Developers"; ObjectID = "Wvb-gx-MvJ"; */
+"Wvb-gx-MvJ.title" = "Developers";
+
+/* Class = "UILabel"; text = "Task"; ObjectID = "XIR-nQ-Xpn"; */
+"XIR-nQ-Xpn.text" = "Task";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YRi-9J-F0e"; */
+"YRi-9J-F0e.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "YVU-FD-zHc"; */
+"YVU-FD-zHc.text" = "Email";
+
+/* Class = "UIButton"; configuration.title = "+"; ObjectID = "ZKX-VO-MbI"; */
+"ZKX-VO-MbI.configuration.title" = "+";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "act-4a-fuv"; */
+"act-4a-fuv.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "Photos"; ObjectID = "auH-Sa-dXF"; */
+"auH-Sa-dXF.title" = "Photos";
+
+/* Class = "UIButton"; configuration.title = " Time"; ObjectID = "g68-uQ-gw7"; */
+"g68-uQ-gw7.configuration.title" = " Time";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "g68-uQ-gw7"; */
+"g68-uQ-gw7.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "User authorization"; ObjectID = "gm0-9q-5Yn"; */
+"gm0-9q-5Yn.text" = "User authorization";
+
+/* Class = "UIBarButtonItem"; title = "Info about OCD"; ObjectID = "h5B-fL-aEA"; */
+"h5B-fL-aEA.title" = "Info about OCD";
+
+/* Class = "UITextField"; placeholder = "New Task"; ObjectID = "hNW-5F-dtT"; */
+"hNW-5F-dtT.placeholder" = "New Task";
+
+/* Class = "UIButton"; configuration.title = " Task"; ObjectID = "jn1-sJ-dLW"; */
+"jn1-sJ-dLW.configuration.title" = " Task";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "jn1-sJ-dLW"; */
+"jn1-sJ-dLW.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Name tasks list"; ObjectID = "m7D-zZ-1Cw"; */
+"m7D-zZ-1Cw.placeholder" = "Name tasks list";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "n0p-Xb-48O"; */
+"n0p-Xb-48O.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "pSH-0H-Xi5"; */
+"pSH-0H-Xi5.title" = "Item";
+
+/* Class = "UIButton"; configuration.title = "+"; ObjectID = "qHX-Wo-olJ"; */
+"qHX-Wo-olJ.configuration.title" = "+";
+
+/* Class = "UILabel"; text = "Name task list"; ObjectID = "slW-j4-RlD"; */
+"slW-j4-RlD.text" = "Name task list";
+
+/* Class = "UIButton"; configuration.title = " Date"; ObjectID = "vff-eK-pPR"; */
+"vff-eK-pPR.configuration.title" = " Date";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vff-eK-pPR"; */
+"vff-eK-pPR.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "w4S-YQ-BNY"; */
+"w4S-YQ-BNY.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Task #1"; ObjectID = "wGD-Er-CaK"; */
+"wGD-Er-CaK.text" = "Task #1";

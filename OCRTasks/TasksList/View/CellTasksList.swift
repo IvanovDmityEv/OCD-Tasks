@@ -9,6 +9,10 @@ import UIKit
 
 class CellTasksList: UITableViewCell {
     
+    var firstShapeLayer: CAShapeLayer!
+    var secondShapeLayer: CAShapeLayer!
+    
+    
         @IBOutlet weak var nameTasksList: UILabel!
         @IBOutlet weak var dateTasks: UILabel!
         @IBOutlet weak var viewTasksList: UIView! {
@@ -18,20 +22,4 @@ class CellTasksList: UITableViewCell {
             }
         }
         @IBOutlet weak var countTasks: UILabel!
-
-    
-    
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

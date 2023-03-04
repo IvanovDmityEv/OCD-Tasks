@@ -15,40 +15,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIN OCD" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uN2-DI-ich">
-                                <rect key="frame" x="0.0" y="278.66666666666669" width="430" height="65"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="50"/>
-                                <color key="textColor" red="0.59607845540000004" green="0.8156862855" blue="0.79607844350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHECK YOURSELF" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uN2-DI-ich">
+                                <rect key="frame" x="65.333333333333343" y="277" width="299.33333333333326" height="41.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="32"/>
+                                <color key="textColor" red="0.4352940917" green="0.37647059560000001" blue="0.71764707569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="yoS-p6-cPa">
-                                <rect key="frame" x="0.0" y="353.66666666666669" width="430" height="250.00000000000006"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image - app" translatesAutoresizingMaskIntoConstraints="NO" id="RBg-mh-Dn8">
+                                <rect key="frame" x="65" y="328.66666666666669" width="300" height="300.00000000000006"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="ZAQ-hf-W4I"/>
+                                    <constraint firstAttribute="height" constant="300" id="MU6-as-qUM"/>
+                                    <constraint firstAttribute="width" constant="300" id="XzM-Lz-HPf"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WITH THIS APP" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esq-eJ-Djo">
-                                <rect key="frame" x="0.0" y="623.66666666666663" width="430" height="39"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
-                                <color key="textColor" red="0.59607845540000004" green="0.8156862855" blue="0.79607844350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="114" y="648.66666666666663" width="202" height="32.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
+                                <color key="textColor" red="0.4352940917" green="0.37647059560000001" blue="0.71764707569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="uN2-DI-ich" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="17z-Y1-Yeb"/>
-                            <constraint firstItem="esq-eJ-Djo" firstAttribute="top" secondItem="yoS-p6-cPa" secondAttribute="bottom" constant="20" id="211-7q-Ccq"/>
-                            <constraint firstItem="yoS-p6-cPa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3FQ-87-u0Q"/>
-                            <constraint firstItem="uN2-DI-ich" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9AK-TY-llq"/>
-                            <constraint firstItem="uN2-DI-ich" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HhJ-aJ-6sk"/>
-                            <constraint firstItem="esq-eJ-Djo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NMy-c1-6XD"/>
-                            <constraint firstItem="yoS-p6-cPa" firstAttribute="top" secondItem="uN2-DI-ich" secondAttribute="bottom" constant="10" id="NuC-rn-ggF"/>
-                            <constraint firstAttribute="trailing" secondItem="yoS-p6-cPa" secondAttribute="trailing" id="Y1O-sr-KQR"/>
-                            <constraint firstItem="yoS-p6-cPa" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="dpN-Ig-wjN"/>
-                            <constraint firstItem="yoS-p6-cPa" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="mc3-HL-MDy"/>
-                            <constraint firstItem="esq-eJ-Djo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rpp-W9-tGk"/>
-                            <constraint firstItem="esq-eJ-Djo" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="v02-xt-ZCv"/>
+                            <constraint firstItem="RBg-mh-Dn8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LhR-dt-t2z"/>
+                            <constraint firstItem="RBg-mh-Dn8" firstAttribute="top" secondItem="uN2-DI-ich" secondAttribute="bottom" constant="10" id="WM2-4j-5cv"/>
+                            <constraint firstItem="RBg-mh-Dn8" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cqp-XD-6Kr"/>
+                            <constraint firstItem="uN2-DI-ich" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="f33-BF-JTE"/>
+                            <constraint firstItem="esq-eJ-Djo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hRT-ew-NpA"/>
+                            <constraint firstItem="esq-eJ-Djo" firstAttribute="top" secondItem="RBg-mh-Dn8" secondAttribute="bottom" constant="20" id="xE9-vs-MOC"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -58,6 +55,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="image-launchScreen" width="2000" height="1333"/>
+        <image name="image - app" width="1380" height="1380"/>
     </resources>
 </document>

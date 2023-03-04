@@ -10,4 +10,7 @@ import Foundation
 enum SegueTasksListVC: String {
     case userInfo = "UserInfo"
     case addTasks = "AddTasks"
+    case showTasks = "ShowTasks"
+    case unwindSegueToTasksListVC = "UnwindSegueToTasksListVC"
+    case backToTasksListVC = "BackToTasksListVC"
 }
